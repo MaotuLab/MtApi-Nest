@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get ,Post ,Body} from '@nestjs/common';
 import { ArticleService } from './articles.service';
 import { Article } from './articles.entity';
 
@@ -10,5 +10,9 @@ export class ArticleController {
   async findAll(): Promise<Article[]> {
 
     return await this.articlesService.findAll();
+  }
+  @Post()
+  async create(@Body() article: Article) {
+    return article
   }
 }
