@@ -14,7 +14,6 @@ export class Article {
   @Column()
   imageUrl: string;
 
-
   @Column()
   isPublished: boolean;
 }
